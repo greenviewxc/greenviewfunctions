@@ -57,39 +57,30 @@ async function checkAndScheduleEmails() {
                   margin: 20px auto;
                   background-color: #fff;
                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                  overflow: hidden;
               }
               .header-background {
                   background-color: #faf3e6;
-                  display: flex;
-                  flex-direction: column;
               }
               .header {
-                  display: flex;
-                  flex-direction: row;
                   background-color: #faf3e6;
-                  margin-left: 40px;
-                  margin-right: 40px;
-                  justify-content: center;
                   border-bottom: #9FC37B 4px solid;
+                  padding: 20px 40px;
+                  text-align: center;
               }
               .h1-green {
                   font-size: x-large;
                   color: #9FC37B;
+                  display: inline;
               }
               .h1-black {
                   font-size: x-large;
                   color: #000;
+                  display: inline;
               }
               .nav {
-                  display: flex;
-                  flex-direction: row;
                   background-color: #faf3e6;
-                  justify-content: center;
-                  padding: 10px;
                   text-align: center;
-                  padding-top: 16px;
-                  gap: 48px;
+                  padding: 16px 0;
               }
               .nav a {
                   margin: 0 10px;
@@ -110,39 +101,24 @@ async function checkAndScheduleEmails() {
                   color: #777;
               }
               .event-box {
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  margin: 20px auto;
-                  padding: 20px;
-                  text-align: center;
                   background-color: #9FC37B;
+                  color: #fff;
                   border-radius: 8px;
                   max-width: 300px;
-                  position: relative;
+                  margin: 20px auto;
+                  text-align: center;
               }
               .event-box h2 {
-                  margin: 0;
                   font-size: 24px;
-                  height: 200px;
-                  color: #fff;
+                  margin: 20px 0;
               }
               .event-details {
-                  color: #fff;
+                  font-size: 16px;
+                  margin-bottom: 20px;
               }
               .event-details span {
                   display: block;
                   margin-top: 5px;
-              }
-              .triangle-left {
-                  position: absolute;
-                  bottom: -100px;
-                  left: 65%;
-                  width: 0;
-                  height: 0;
-                  border-top: 100px solid transparent;
-                  border-right: 200px solid #555;
-                  border-bottom: 100px solid transparent;
               }
               .footer {
                   padding: 20px;
@@ -161,41 +137,59 @@ async function checkAndScheduleEmails() {
 
       <div class="email-container">
           <!-- Header -->
-          <div class="header-background">
-              <div class="header">
-                  <h1 class="h1-green">Green</h1>
-                  <h1 class="h1-black">View</h1>
-              </div>
-          </div>
+          <table class="header-background" width="100%">
+              <tr>
+                  <td class="header">
+                      <h1 class="h1-green">Green</h1>
+                      <h1 class="h1-black">View</h1>
+                  </td>
+              </tr>
+          </table>
 
           <!-- Navigation Links -->
-          <div class="nav">
-              <a href="#">Home</a>
-              <a href="#">About Us</a>
-              <a href="#">Calendar</a>
-          </div>
+          <table class="nav" width="100%">
+              <tr>
+                  <td>
+                      <a href="#">Home</a>
+                      <a href="#">About Us</a>
+                      <a href="#">Calendar</a>
+                  </td>
+              </tr>
+          </table>
 
           <!-- Hero Section -->
-          <div class="hero">
-              <h1>Hey There!</h1>
-              <p>Take a look at this event happening near you soon.</p>
-          </div>
+          <table class="hero" width="100%">
+              <tr>
+                  <td>
+                      <h1>Hey There!</h1>
+                      <p>Take a look at this event happening near you soon.</p>
+                  </td>
+              </tr>
+          </table>
 
           <!-- Event Box -->
-          <div class="event-box">
-              <h2>${event.title}</h2>
-              <div class="event-details">
-                  <span><strong>${new Date(
-                    event.start.toDate()
-                  ).toLocaleString()}</strong></span>
-                  <span>📍 ${event.location}</span>
-              </div>
-          </div>
+          <table class="event-box" width="100%">
+              <tr>
+                  <td>
+                      <h2>${event.title}</h2>
+                      <div class="event-details">
+                          <span><strong>${new Date(
+                            event.start.toDate()
+                          ).toLocaleString()}</strong></span>
+                          <span>📍 ${event.location}</span>
+                      </div>
+                  </td>
+              </tr>
+          </table>
 
           <!-- Footer -->
-          <div class="footer">
-              <a href="#">Unsubscribe</a>
-          </div>
+          <table class="footer" width="100%">
+              <tr>
+                  <td>
+                      <a href="#">Unsubscribe</a>
+                  </td>
+              </tr>
+          </table>
       </div>
 
       </body>
